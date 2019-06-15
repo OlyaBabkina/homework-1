@@ -5,15 +5,16 @@ body{
 }
 
 .content{
-    margin-top: 45px;
+    margin: 45px auto;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    width: 800px;
 }
 
 .done, .to_do, .onload {
-    height: 40px;
+    justify-content: center;
+    align-items: center;
+    height: 95px;
     width: 365px;
     margin: 2px;
     padding: 5px;
@@ -68,11 +69,15 @@ body{
     margin-right: 20px;
 }
 
-@media screen and (max-width: 600px)
+@media screen and (max-width: 900px)
 {
     .content {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    .done, .to_do, .onload {
+        height: 40px;
     }
 }
