@@ -3,7 +3,7 @@ html{
     padding: 0px;
     background: linear-gradient(to right, #502982, #9a6ad6);
 }
-.done, .to_do {
+.done, .to_do, .onload {
     margin: 2px;
     padding: 5px;
     font-family: sans-serif;
@@ -14,26 +14,36 @@ html{
     content: '';
     display: inline-block;
     transform: rotate(45deg);
-    height: 24px;
-    width: 12px;
-    border-bottom: 7px solid white;
-    border-right: 7px solid white;
-    margin-right: 25px;
+    height: 22px;
+    width: 9px;
+    border-bottom: 4px solid white;
+    border-right: 4px solid white;
+    margin-right: 22px;
+}
+
+.onload{
+    color: yellow;
+}
+
+.onload::before{
+    content: url(91_2.gif);
 }
 
 .to_do{
     opacity: 0.4; 
 }
 
-/*.to_do::before{
-    content: url(icon_time.png);
-    transform: rotate(45deg);
-    /*transform: scale(0.5);
-    margin-right: 25px;
-}*/
+.to_do::before{
+    content: url("https://img.icons8.com/small/16/000000/time-machine.png");
+    margin-right: 20px;
+}
 
 @media (min-width: 769px)
 {}
 
 @media (max-width: 480px)
-{}
+{
+    .content{
+        margin: 25px 30px;
+    }
+}
