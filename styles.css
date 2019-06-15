@@ -1,14 +1,26 @@
-html{
+body{
     margin: 0px;
     padding: 0px;
     background: linear-gradient(to right, #502982, #9a6ad6);
 }
+
+.content{
+    margin-top: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .done, .to_do, .onload {
+    height: 40px;
+    width: 365px;
     margin: 2px;
     padding: 5px;
     font-family: sans-serif;
     color: white;
     font-size: 25px;
+    
 }
 .done::before{
     content: '';
@@ -56,12 +68,11 @@ html{
     margin-right: 20px;
 }
 
-@media (min-width: 769px)
-{}
-
-@media (max-width: 480px)
+@media screen and (max-width: 600px)
 {
-    .content{
-        margin: 25px 30px;
+    .content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }
