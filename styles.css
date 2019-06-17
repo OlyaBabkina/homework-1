@@ -15,34 +15,34 @@ body{
 .timeline {
     position: relative;
     padding: 10px 20px;
-    max-width: 270px;
     margin-left: 30px;
   }
   
 .timeline::before {
     content: '';
-    width: 1px;
-    background-color: white;
+    width: 0px;
+    border-left: 2px solid white;
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 15px;
-    left: -32px;
+    left: -55px;
   }
   
   .ewrap{
       width: 400px;
   }
 
-  div.ewrap::after {
+  .ewrap::after {
     content: '';
-    border: 1px solid white;
+    background: linear-gradient(to right, #502982, #9a6ad6);
+    border: 2px solid white;
     width: 16px;
     height: 16px;
     border-radius: 20px;
     position: absolute;
     top: 20%;
-    left: -41px;
+    left: -63px;
+    z-index: 3;
   }
 
 .done, .to_do, .onload {
@@ -102,6 +102,24 @@ body{
     margin-right: 20px;
 }
 
+
+.timeline:nth-child(odd)::before, .timeline:nth-child(odd) .ewrap::after{
+    display: none;
+}
+
+.timeline:nth-child(n+6)::before{ 
+    border: 1px dashed white;
+}
+
+.timeline:nth-child(n+7) .ewrap::after{
+    border: 2px dashed white;
+}
+
+.timeline:nth-child(6) .ewrap::after {
+    background-color: yellow; 
+}
+
+
 @media screen and (max-width: 900px)
 {
     .content {
@@ -109,11 +127,20 @@ body{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 700px;
+        height: 550px;
     }
 
     .done, .to_do, .onload {
         height: 20px;
         width: 400px;
+    }
+
+    .timeline:nth-child(odd)::before, .timeline:nth-child(odd) .ewrap::after{
+        display: flex;
+    }
+
+    .ewrap::after{
+        top: 36%;
+        left: -64px;
     }
 }
